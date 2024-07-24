@@ -1,0 +1,492 @@
+<html>
+<head>
+<title>FILMOGRAFIA - ESTÔMAGO
+        </title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+</head>
+<body bgcolor="#FFFFFF" link="blue" text="#1C1C1C" vlink="blue">
+<link href="/css/iah.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/css/portal.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/css/menu.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/iah/iah.js" type="text/javascript"></script>
+<script type="text/javascript">
+        /* global variables */
+        var script = "/cgi-bin/wxis.exe/iah/";
+        var environment = "^d/iah/^cf:/web/cinemateca/www/wwwroot/cinemateca/cgi-bin/iah/^bf:/web/cinemateca/www/wwwroot/cinemateca/bases/iah/^siah/iah.xis^v2.5.2";
+        var base = "FILMOGRAFIA";
+</script>
+
+<body>
+    <center>
+    <div class="container">
+    <div class="top">
+    <div id="identification">
+    <table border="0" cellpadding="0" cellspacing="0" width="750">
+    <tr>
+    <td bgcolor="#FFFFFF" height="103">
+    <a href="http://www.cinemateca.gov.br/"><img src="/image/bannerfb.jpg"/></a>
+    </td>
+    </tr>
+    </table>
+    <br/>
+    <div></div>
+    </div>
+    </div>
+    <div class="middle">
+    <script>
+            function AnySelected(){
+                    var any = false;
+                    var count = 0;
+
+                    while(!any && count < document.forms[0].listChecked.length) {
+
+                            any = (document.forms[0].listChecked[count].checked || document.forms[0].listChecked[count].type == "hidden");
+                            count++;
+                }
+                    if (!any)
+                    {
+                            alert("Nenhuma referência foi selecionada");
+                            return false;
+                    }
+                    else{
+                            document.forms[0].nextAction.value="your_selection";
+
+                            document.forms[0].submit();
+                            return true;
+                    }
+            }
+
+
+    </script>
+    <form action="/cgi-bin/wxis.exe/iah/" method="POST">
+    <input name="IsisScript" type="hidden" value="iah/iah.xis"/>
+    <input name="environment" type="hidden" value="^d/iah/^cf:/web/cinemateca/www/wwwroot/cinemateca/cgi-bin/iah/^bf:/web/cinemateca/www/wwwroot/cinemateca/bases/iah/^siah/iah.xis^v2.5.2"/>
+    <input name="avaibleFormats" type="hidden" value="^nstandard.pft^pSimples"/>
+    <input name="avaibleFormats" type="hidden" value="^ndetailed.pft^pCompleto"/>
+    <input name="avaibleFormats" type="hidden" value="^nfontes.pft^pFontes"/>
+    <input name="avaibleFormats" type="hidden" value="^nDEFAULT^fstandard.pft"/>
+    <input name="apperance" type="hidden" value="^c#FFFFFF^t#1C1C1C^lblue^b#EE9A00^eiah@bireme.br^rOFF^mOFF"/>
+    <input name="helpInfo" type="hidden" value=""/>
+    <input name="gizmoDecod" type="hidden" value=""/>
+    <input name="avaibleForms" type="hidden" value=""/>
+    <input name="logoImage" type="hidden" value=""/>
+    <input name="logoURL" type="hidden" value=""/>
+    <input name="headerImage" type="hidden" value=""/>
+    <input name="headerURL" type="hidden" value=""/>
+    <input name="form" type="hidden" value="A"/>
+    <input name="pathImages" type="hidden" value="/iah/P/image/"/>
+    <input name="navBar" type="hidden" value="OFF"/>
+    <input name="hits" type="hidden" value="10"/>
+    <input name="format" type="hidden" value="detailed.pft"/>
+    <input name="lang" type="hidden" value="p"/>
+    <input name="isisTotal" type="hidden" value="1"/>
+    <input name="isisFrom" type="hidden" value="1"/>
+    <input name="user" type="hidden" value="GUEST"/>
+    <input name="baseFeatures" type="hidden" value="^eOFF"/>
+    <input name="nextAction" type="hidden" value="refine/resubmit"/>
+    <center>
+    <table bgcolor="#EE9A00" border="0" cellpadding="0" cellspacing="0" width="690">
+    <tr>
+    <td align="center">
+    <a href="javascript:void(AnySelected())"><img border="0" src="/iah/P/image/yselect.gif"/></a>
+    </td>
+    <td align="center">
+    <input border="0" name="list" src="/iah/P/image/sresult.gif" type="image"/>
+    </td>
+    <td align="center">
+    <input border="0" name="new search" src="/iah/P/image/npesq.gif" type="image"/>
+    </td>
+    <!--td align="center">
+                                            <input type="image" name="config" src="/iah/P/image/config.gif" border="0"-->
+
+    <td align="center">
+    <a href="#bottom"><img border="0" src="/iah/P/image/fim.gif"/></a>
+    </td>
+    </tr>
+    </table>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="690">
+    <tr>
+    <td>
+    <table border="0" width="600">
+    <tr>
+    <td align="right" valign="top">
+    <font face="arial" size="2">Base de dados :</font>
+    </td>
+    <td valign="top">
+    <font face="verdana" size="1"><b>FILMOGRAFIA</b></font>
+    </td>
+    </tr>
+    <tr>
+    <td align="right" valign="top" width="35%">
+    <font face="arial" size="2">Pesquisa :</font>
+    </td>
+    <td valign="top" width="65%">
+    <font face="verdana" size="1"><b>
+                                                    ID=039949 []
+                                                    </b></font>
+    </td>
+    </tr>
+    <tr>
+    <td align="right" valign="top">
+    <font face="arial" size="2">Referências encontradas :</font>
+    </td>
+    <td>
+    <font face="verdana" size="1">
+    <b>1</b>
+                                                    [<a href="#refine">refinar</a>]
+                                                    </font>
+    </td>
+    </tr>
+    <tr>
+    <td align="right">
+    <font face="Verdana" size="2">Mostrando:</font>
+    </td>
+    <td>
+    <font face="Verdana" size="1">
+    <b>1 .. 1</b>  
+                                                    no formato [<b>Completo</b>]
+                                                    </font>
+    <input align="middle" border="0" name="config" src="/iah/P/image/change.gif" type="image"/>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br/>
+    <!-- monta navegacao entre as paginas do resultado -->
+    <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr valign="top">
+    <td>
+    <font face="Verdana" size="2"><sup><b><i>página 1 de 1</i></b></sup></font>
+    </td>
+    <td align="right" nowrap="">
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br/>
+    <a name="1"></a>
+    <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="690">
+    <tr>
+    <td>
+    <hr/>
+    <font face="Verdana" size="1">  
+                            <b>1 / 1</b>
+    </font>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="690">
+    <tr>
+    <td align="left" rowspan="6" valign="top" width="100">
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td width="28">
+    <input name="listChecked" type="checkbox" value="^m38289^h1"/>
+    </td>
+    <td width="72">
+    <font face="verdana" size="1"><i>seleciona</i></font>
+    </td>
+    </tr>
+    </table></td></tr>
+    </table>
+
+    <td>
+    <!-- formato de apresentacao da base -->
+    <div align="center">
+        <b class="title">ESTÔMAGO</b>
+        </div>
+            <b class="label">Categorias</b><br/> Co-produção / Longa-metragem / Sonoro / Ficção<br/><br/>
+            <b class="label">Material original</b> <br/>35mm, COR, 100min, 2.730m, 24q, Dolby Cyan SR-SRD, 1:1'66<br/>
+            <br/><b class="label">Data e local de produção</b><br/>
+                <b>Ano:</b> 2007<br/>
+                <b>País: </b>BR-IT<br/>
+                <b>Cidade:</b> Curitiba<br/>
+                <br/><br/>
+            <b class="label">Certificados</b><blockquote>Salic 070420Certificado de Produto Brasileiro: B0700777200000 de 08.10.2007.</blockquote>
+            <b class="label">Circuito exibidor</b><blockquote>Exibido em São Paulo a 15.10.2022, na sala Grande Otelo, Cinemateca Brasileira.<br/></blockquote>
+            <b class="label">Sinopse</b><blockquote>"Na vida há os que devoram e os que são devorados. Raimundo Nonato, nosso protagonista, descobre um caminho à parte: ele cozinha. E é nas cozinhas de um boteco, de um restaurante italiano e de uma prisão - o que ele fez para acabar ali? - que Nonato vive sua intrigante história. E também aprende as regras da cadeia alimentar da sociedade. Regras que ele usa a seu favor, porque mesmo os cozinheiros têm direito a comer sua parte - e eles sabem, melhor do que ninguém, qual é a parte boa." (Extraído de Programadora Brasil/6)<br/></blockquote>
+            <b class="label">Gênero</b><blockquote>Drama<br/></blockquote>
+            <b class="label">Termos descritores</b><blockquote>Literatura; Alimentação; Presídio; Crime</blockquote>
+            <b class="label">Descritores secundários</b><blockquote>Adaptação para cinema</blockquote>
+            <b class="label">Produção</b><br/>
+                <b>Companhia(s) produtora(s): </b>Zencrane Filmes; Indiana Production<br/>
+                <b>Produção: </b>Natividade, Cláudia da; Donvito, Fabrizio; Cohen, Marco<br/>
+                <b>Direção de produção: </b>Leean, Max; Mascheroni, Alessandro; Ferrer, Rica<br/>
+                <b>Produção executiva: </b>Natividade, Cláudia da<br/>
+                <b>Assistência de produção: </b>Paula, Janie; Amaral, Fabíola; Guimarães, Larissa; Re, Alexandra; Pavin, Rita de Cassia Barreto Lima; Stella, Marta; Marelli, Andrea; Colombo, Simone<br/><br/>
+            <b class="label">Produção  - Dados adicionais</b><br/>
+                <b>Financimento/patrocínio: </b>Secretaria do Audiovisual - Ministério da Cultura - Governo Federal; Locall de Cinema e Televisão<br/>
+                <b>Coordenação de produção: </b>Fortunati, Taciana<br/>
+                <b>Produção de locação: </b>Tesseroli, Márcio Murilo; Haro, Alessandra; Gil, Alessandra<br/>
+                <b>Assistência de produção executiva: </b><br/>
+                <b>Motorista: </b>Fruet, Affonso; Vanoni, Joaquim; Kiko; Carboni, Massimo; Silveira, Paulo Roberto da<br/>
+                <b>Transporte: </b>Free Sas; Delta Logistic<br/><br/>
+            <b class="label">Distribuição</b><br/>
+                <b>Companhia(s) distribuidora(s): </b>Downtown Filmes<br/><br/>
+            <b class="label">Argumento/roteiro</b><br/>
+                <b>Argumento: </b>Silvestre, Lusa; Jorge, Marcos<br/>
+                <b>Roteiro: </b>Silvestre, Lusa; Jorge, Marcos; Natividade, Cláudia da; Donvito, Fabrizio<br/><br/>
+                <b>Estória: </b>Livremente inspirado no conto &lt;Presos pelo Estômago&gt;, do livro &lt;Pólvora, Gorgonzola e Alecrim&gt; de &lt;Silvestre, Lusa&gt;<br/><br/>
+            <b class="label">Direção</b><br/>
+                <b>Direção: </b>Jorge, Marcos<br/>
+                <b>Assistência de direção: </b>Werthein, Rodrigo Sarti; Barion, Rafael; Cabral, Humberto<br/>
+                <b>Continuidade: </b>Araújo, Mariana<br/><b>Coreografia: </b>Jorge, Carmen<br/><br/>
+            <b class="label">Fotografia</b><br/>
+                <b>Direção de fotografia: </b>Seabra, Toca<br/>
+                <b>Câmera: </b>Seabra, Toca; Jorge, Marcos<br/>
+                <b>Assistência de câmera: </b>Fortes, Juliano Lopes; Archanjo, Alvaro; Samori, Ale; Reis, Rodrigo<br/>
+                <b>Fotografia de cena: </b>Ribeiro, Eduardo<br/><br/>
+            <b class="label">Dados adicionais de fotografia</b><br/>
+                <b>Operador de VT: </b>Duclerc, Lívia<br/>
+                <b>Eletricista: </b>Silva, Odair da<br/>
+                <b>Maquinista: </b>Romão, Flávio<br/>
+                <b>Auxiliar de maquinista: </b>Santos, Fábio Romão dos; Salgueiro, Jair; Silva, Ori da<br/><br/>
+            <b class="label">Som</b><br/>
+                <b>Som direto: </b>Lombardo, Maricetta<br/><br/>
+            <b class="label">Dados adicionais de som</b><br/>
+                <b>Operador de microfone: </b>Hack, Bruno<br/><br/>
+            <b class="label">Montagem</b><br/>
+                <b>Montagem: </b>Alverdi, Luca<br/><br/>
+            <b class="label">Direção de arte</b><br/>
+                <b>Direção de arte: </b>Perussolo, Jussara<br/>
+                <b>Assistência de direção de arte: </b>Yamada, Alessandro<br/>
+                <b>Figurinos: </b>Grossi, Marisol<br/><br/>
+            <b class="label">Dados adicionais de direção de arte</b><br/>
+                <b>Contra-regra/acessórios de cenografia: </b>Silva, Daniel Ferreira da<br/>
+                <b>Montagem de cenário: </b>Jordan, Edson de Palma; Silva, Daniel Ferreira da; Silva, Daniel Ferreira da<br/>
+                <b>Maquiagem: </b>Miranda, Marcelino de; Marchiori, Lilian<br/>
+                <b>Assistência de figurino: </b>Stalker, Tatiana<br/><br/>
+            <b class="label">Música</b><br/>
+                <b>Música original: </b>Venosta, Giovanni<br/>
+                <b>Trilha musical: </b>Venosta, Giovanni<br/><br/>
+            <b class="label">Canção</b><br/>
+                <b>Instrumentista: </b>Rantzer, Tito Mangiafejo - assobio e contrabaixo; Silveira, Gilson - percussão; Prada, Rodney - viola da gamba; Mariani, Massimo - viola portuguesa e guitarra elétrica; Cerino, Sandra - sax alto e soprano, flauta, clarinete;Bancolini, Liliana - voz; Beccalossi, Fausto - acordeão; Quarteto Alchimia - cordas; Tedesi, Serafino - primeiro violino; Rossetti, Simone - segundo violino; Soldá, Matteo Del - viola; Anzalone, Andrea - violoncelo; Venosta, Giovanni - piano, teclados, voz<br/>
+                <b>Orquestração: </b>Venoska, Giovanni<br/><br/>
+                <b>Título: </b>Viremexe; <br/>
+                <b>Autor da canção: </b>Santana, Bal; <br/>
+                <b>Intérprete: </b>Santana, Bal; <br/><br/>
+                <b>Título: </b>Beradero; <br/>
+                <b>Autor da canção: </b>Cesar, Chico; <br/>
+                <b>Intérprete: </b>Miguel, João; <br/><br/>
+                <b>Título: </b>I've been loving you; <br/>
+                <b>Autor da canção: </b>Venosta,G. e Mariani, M.; <br/>
+                <b>Intérprete: </b>Bancolini, Liliana; <br/><br/>
+                <b>Título: </b>Il Mio domani; <br/>
+                <b>Autor da canção: </b>Mariani, M.; <br/>
+                <b>Intérprete: </b>Mariani, Massimo<br/><br/>
+                <b>Título: </b>House function<br/>
+                <b>Autor da canção: </b>Mariani, M.<br/><br/>
+            <b class="label">Identidades/elenco: </b><br/>
+                Miguel, João (Raimundo Nonato, Alecrim)<br/>
+                Santana, Babu (Bujiú)<br/>
+                Cenovicz, Zeca (Zulmiro)<br/>
+                Zenni, Marco (Vagnão)<br/>
+                Szymanski, Marcel (Valtão)<br/>
+                Correa, Sidy (Boquenga)<br/>
+                Sil, Alexander (Lino)<br/>
+                Ferrarini, Rodrigo (Magrão)<br/>
+                Viana, Tino (Guentai)<br/>
+                Silva, Helder (Sequestro)<br/>
+                Briani, Carlo (Giovanni)<br/>
+                Fumagalli, Andrea (Francesco)<br/>
+                Marchiori, Lilian (Rita)<br/>
+                Stongolli, Flávia (prostituta)<br/>
+                Saravy, Patricia (prostituta)<br/>
+                Carvalho, Zilda (prostituta)<br/>
+                Gandelman, Natasha (prostituta)<br/>
+                Cezar, Altamar (açougueiro)<br/>
+                Becker, Débora (dançarina nightclub)<br/>
+                Moreira, Pedro (Edson, barman)<br/>
+                Lang, Luimar (cliente)<br/>
+                Miklos, Paulo (Etcétera)<br/>
+                Noher, Jean Pierre (Duque)<br/>
+                Brambilla, Luiz (Lambari)<br/>
+                Canedo, Ed (Maitê, travesti)<br/>
+                Carvalhaes, Adriano (Suely, travesti)<br/>
+                Motta, Dieizol (container)<br/>
+                Tuir, Ivan (Codorna)<br/>
+                Mendes Júnior, Luis (carcereiro 1)<br/>
+                Leal, Moacir (carcereiro 2)<br/>
+                Belli, Betina (dona da pensão)<br/>
+                Silvestre, Lusa (Ratazana, O.S.)<br/>
+                Sievers, Arthur Rocha (1o. Marista)<br/>
+                    <b>Apresentando: </b><br/>
+                    Nascimento, Fabiula(Iria)<br/><br/>
+                <b>Conteúdo examinado:  </b>S<br/>
+                <b>Fontes utilizadas:  </b><br/>
+            <a href="#" onclick="return( showFonte('CB/Transcrição de letreiros-cat') )">CB/Transcrição de letreiros-cat</a><br/><a href="#" onclick="return( showFonte('Programadora Brasil/6') )">Programadora Brasil/6</a><br/>Site, Instagram, Cinemateca Brasileira, Feira Sabor Nacional, disponível em: https://www.instagram.com/p/CjtA7qquMSL/. Acesso em: 21.11.2022.<br/>Site, Ancine, disponível em: http://sad2.ancine.gov.br/obrasnaopublicitarias/pesquisarCpbViaPortal/pesquisarCpbViaPortal.seam, acesso em: 18.09.2018.<br/><b>Observações: </b><br/>     CB/Transcrição de letreiros informa que o filme é uma co-produção brasileiro-italiana, realizada segundo os mecanismos do &lt;Acordo Bilateral Brasil-Itália&gt;.<br/>     Esta obra foi incluída no projeto 914BRZ4013 da &lt;SAv&gt; - &lt;Unesco&gt;, que promoveu o levantamento de filmes fomentados pela &lt;Secretaria do Audiovisual&gt; do &lt;Ministério da Cultura&gt;.<br/>     Programadora Brasil/6 informa que a obra participa do &lt;Programa 268&gt;, intitulado &lt;Estômago&gt;. A mesma fonte informa que a obra possui 113 minutos de duração, grafa &lt;Indiana Production Company&gt; como companhia produtora e &lt;Leean, Max&gt; como &lt;Logan, Max&gt;.<br/><br/><br/></td></center>
+        <br/>
+    <hr align="center" width="600"/>
+    <!-- monta navegacao entre as paginas do resultado -->
+    <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr valign="top">
+    <td>
+    <font face="Verdana" size="2"><sup><b><i>página 1 de 1</i></b></sup></font>
+    </td>
+    <td align="right" nowrap="">
+    </td>
+    </tr>
+    </table>
+    </center>
+    <a name="bottom"></a>
+    <center>
+    <table bgcolor="#EE9A00" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td align="center" width="25%">
+    <a href="javascript:void(AnySelected())"><img border="0" src="/iah/P/image/yselect.gif"/></a>
+    </td>
+    <td align="center" width="25%"> </td>
+    <td align="center" width="25%"> </td>
+    <td align="right">
+    <a href="#top"><img border="0" src="/iah/P/image/inic.gif"/></a>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br/><br/>
+    <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td>
+    <a name="refine"><font face="Verdana" size="1"><b><i>Refinar a pesquisa</i></b></font></a>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <script>
+    function changeForm(valor)
+    {
+            document.forms[0].form.value=valor;
+            document.forms[0].nextAction.value="CHANGE FORM";
+            document.forms[0].submit();
+    }
+    </script>
+    <!-- FORMULARIO AVANCADO -->
+    <center>
+    <table align="center" bgcolor="#EE9A00" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td width="80"> 
+
+
+                    </td>
+    <td><!--font face="verdana" size="1">Base de dados : <b-->
+    <input name="base" type="hidden" value="FILMOGRAFIA"/>
+    </td>
+    <td align="right"><font face="verdana" size="1"><b>Pesquisa avançada</b></font>   </td>
+    </tr>
+    </table>
+    </center>
+    <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td align="right"><font face="verdana" size="2"><small>
+                                    Pesquisar por :
+
+                                            <a href="javascript:void(changeForm('F'))">Pesquisa simples</a>   
+
+
+
+                                    </small></font>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br/><center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+    <td width="30"> </td>
+    <td width="80"> </td>
+    <td width="270"><i><font face="verdana" size="2">Pesquisar</font></i></td>
+    <td width="235"><font face="verdana" size="2"><i>no campo</i></font></td>
+    <td width="62"> </td>
+    </tr>
+    <tr>
+    <td width="30"><font face="Verdana" size="2"><b>1</b></font></td>
+    <td width="80">
+    <input name="conectSearch" type="hidden" value="init"/> 
+
+                            </td>
+    <td align="left" width="270">
+    <input maxlength="256" name="exprSearch" size="32" type="text" value="ID=039949"/>
+    </td>
+    <td width="235">
+    <select name="indexSearch" size="1"><option value="^nTw^pTodos os campos^xALL ^yDATABASE">Todos os campos</option><option value="^nTi^pTítulos^x/151,20,22^yDATABASE">Títulos</option><option value="^nDp^pData e local de produção^x/86^yDATABASE">Data e local de produção</option><option value="^nDo^pDireção^x/66^yDATABASE">Direção</option><option value="^nAr^pArgumento/Roteiro^x/67^yDATABASE">Argumento/Roteiro</option><option value="^nIe^pIdentidades/Elenco^x/28,280^yDATABASE">Identidades/Elenco</option><option value="^nFo^pFotografia^x/62,72^yDATABASE">Fotografia</option><option value="^nSo^pSom^x/64,74^yDATABASE">Som</option><option value="^nDa^pDireção de arte^x/61,71^yDATABASE">Direção de arte</option><option value="^nMu^pMúsica/Canções^x/63,73,83^yDATABASE">Música/Canções</option><option value="^nMt^pMontagem^x/65,75^yDATABASE">Montagem</option><option value="^nPo^pProdução/Distribuição^x/60,70,68^yDATABASE">Produção/Distribuição</option><option value="^nEl^pEstúdios/Laboratórios/Locações^x/87^yDATABASE">Estúdios/Laboratórios/Locações</option><option value="^nDl^pData e local de lançamento^x/85^yDATABASE">Data e local de lançamento</option><option value="^nCt^pCategorias/Gêneros^x/15,24^tshort^yDATABASE">Categorias/Gêneros</option><option value="^nTd^pAssuntos - Vocabulário controlado^x/26^yDATABASE">Assuntos - Vocabulário controlado</option><option value="^nDs^pAssuntos - Descritores livres^x/27^yDATABASE">Assuntos - Descritores livres</option><option value="^nTg^pTermos geográficos^x/165^yDATABASE">Termos geográficos</option><option value="^nPr^pPrêmios^x/88^yDATABASE">Prêmios</option><option value="^nMo^pCaracterísticas técnicas^x/19^tshort^yDATABASE">Características técnicas</option><option value="^nFc^pFontes utilizadas/consultadas^x/89,890^yDATABASE">Fontes utilizadas/consultadas</option><option value="^nMi^pMultimídia^x/987^tshort^yDATABASE">Multimídia</option><option value="^nMa^pMateriais em arquivos^x/13^tshort^yDATABASE">Materiais em arquivos</option><option value="^nOt^pOutras informações^x/69,690,99^yDATABASE">Outras informações</option></select>
+    </td>
+    <td align="left" width="62"><input border="0" name="index1" src="/iah/P/image/indice.gif" type="image"/></td>
+    </tr>
+    <tr>
+    <td width="30"><font face="Verdana" size="2"><b>2</b></font></td>
+    <td width="80">
+    <select name="conectSearch" size="1">
+    <option value="and">and
+                                                            <option value="or">or
+                                                            <option value="and not">and not
+                                                    </option></option></option></select>
+    </td>
+    <td align="left" width="270">
+    <input maxlength="256" name="exprSearch" size="32" type="text" value=""/>
+    </td>
+    <td width="235">
+    <select name="indexSearch" size="1"><option value="^nTw^pTodos os campos^xALL ^yDATABASE">Todos os campos</option><option value="^nTi^pTítulos^x/151,20,22^yDATABASE">Títulos</option><option value="^nDp^pData e local de produção^x/86^yDATABASE">Data e local de produção</option><option value="^nDo^pDireção^x/66^yDATABASE">Direção</option><option value="^nAr^pArgumento/Roteiro^x/67^yDATABASE">Argumento/Roteiro</option><option value="^nIe^pIdentidades/Elenco^x/28,280^yDATABASE">Identidades/Elenco</option><option value="^nFo^pFotografia^x/62,72^yDATABASE">Fotografia</option><option value="^nSo^pSom^x/64,74^yDATABASE">Som</option><option value="^nDa^pDireção de arte^x/61,71^yDATABASE">Direção de arte</option><option value="^nMu^pMúsica/Canções^x/63,73,83^yDATABASE">Música/Canções</option><option value="^nMt^pMontagem^x/65,75^yDATABASE">Montagem</option><option value="^nPo^pProdução/Distribuição^x/60,70,68^yDATABASE">Produção/Distribuição</option><option value="^nEl^pEstúdios/Laboratórios/Locações^x/87^yDATABASE">Estúdios/Laboratórios/Locações</option><option value="^nDl^pData e local de lançamento^x/85^yDATABASE">Data e local de lançamento</option><option value="^nCt^pCategorias/Gêneros^x/15,24^tshort^yDATABASE">Categorias/Gêneros</option><option value="^nTd^pAssuntos - Vocabulário controlado^x/26^yDATABASE">Assuntos - Vocabulário controlado</option><option value="^nDs^pAssuntos - Descritores livres^x/27^yDATABASE">Assuntos - Descritores livres</option><option value="^nTg^pTermos geográficos^x/165^yDATABASE">Termos geográficos</option><option value="^nPr^pPrêmios^x/88^yDATABASE">Prêmios</option><option value="^nMo^pCaracterísticas técnicas^x/19^tshort^yDATABASE">Características técnicas</option><option value="^nFc^pFontes utilizadas/consultadas^x/89,890^yDATABASE">Fontes utilizadas/consultadas</option><option value="^nMi^pMultimídia^x/987^tshort^yDATABASE">Multimídia</option><option value="^nMa^pMateriais em arquivos^x/13^tshort^yDATABASE">Materiais em arquivos</option><option value="^nOt^pOutras informações^x/69,690,99^yDATABASE">Outras informações</option></select>
+    </td>
+    <td align="left" width="62"><input border="0" name="index2" src="/iah/P/image/indice.gif" type="image"/></td>
+    </tr>
+    <tr>
+    <td width="30"><font face="Verdana" size="2"><b>3</b></font></td>
+    <td width="80">
+    <select name="conectSearch" size="1">
+    <option value="and">and
+                                                            <option value="or">or
+                                                            <option value="and not">and not
+                                                    </option></option></option></select>
+    </td>
+    <td align="left" width="270">
+    <input maxlength="256" name="exprSearch" size="32" type="text" value=""/>
+    </td>
+    <td width="235">
+    <select name="indexSearch" size="1"><option value="^nTw^pTodos os campos^xALL ^yDATABASE">Todos os campos</option><option value="^nTi^pTítulos^x/151,20,22^yDATABASE">Títulos</option><option value="^nDp^pData e local de produção^x/86^yDATABASE">Data e local de produção</option><option value="^nDo^pDireção^x/66^yDATABASE">Direção</option><option value="^nAr^pArgumento/Roteiro^x/67^yDATABASE">Argumento/Roteiro</option><option value="^nIe^pIdentidades/Elenco^x/28,280^yDATABASE">Identidades/Elenco</option><option value="^nFo^pFotografia^x/62,72^yDATABASE">Fotografia</option><option value="^nSo^pSom^x/64,74^yDATABASE">Som</option><option value="^nDa^pDireção de arte^x/61,71^yDATABASE">Direção de arte</option><option value="^nMu^pMúsica/Canções^x/63,73,83^yDATABASE">Música/Canções</option><option value="^nMt^pMontagem^x/65,75^yDATABASE">Montagem</option><option value="^nPo^pProdução/Distribuição^x/60,70,68^yDATABASE">Produção/Distribuição</option><option value="^nEl^pEstúdios/Laboratórios/Locações^x/87^yDATABASE">Estúdios/Laboratórios/Locações</option><option value="^nDl^pData e local de lançamento^x/85^yDATABASE">Data e local de lançamento</option><option value="^nCt^pCategorias/Gêneros^x/15,24^tshort^yDATABASE">Categorias/Gêneros</option><option value="^nTd^pAssuntos - Vocabulário controlado^x/26^yDATABASE">Assuntos - Vocabulário controlado</option><option value="^nDs^pAssuntos - Descritores livres^x/27^yDATABASE">Assuntos - Descritores livres</option><option value="^nTg^pTermos geográficos^x/165^yDATABASE">Termos geográficos</option><option value="^nPr^pPrêmios^x/88^yDATABASE">Prêmios</option><option value="^nMo^pCaracterísticas técnicas^x/19^tshort^yDATABASE">Características técnicas</option><option value="^nFc^pFontes utilizadas/consultadas^x/89,890^yDATABASE">Fontes utilizadas/consultadas</option><option value="^nMi^pMultimídia^x/987^tshort^yDATABASE">Multimídia</option><option value="^nMa^pMateriais em arquivos^x/13^tshort^yDATABASE">Materiais em arquivos</option><option value="^nOt^pOutras informações^x/69,690,99^yDATABASE">Outras informações</option></select>
+    </td>
+    <td align="left" width="62"><input border="0" name="index3" src="/iah/P/image/indice.gif" type="image"/></td>
+    </tr>
+    <tr>
+    <td colspan="6"> </td>
+    </tr>
+    <tr>
+    <td align="center" colspan="6">
+    <input border="0" name="config" src="/iah/P/image/config.gif" type="image"/>     
+                                    <input border="0" name="new search" src="/iah/P/image/limpa.gif" type="image"/>     
+                                    <input border="0" src="/iah/P/image/pesq.gif" type="image"/>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br/><br/>
+    </form>
+    <br/>
+    <table border="0" width="100%">
+    <tr>
+    <td align="center"><font face="Verdana" size="1">Search engine: <a href="http://www.bireme.br/isis/P/iah.htm"><b>iAH</b></a> powered by <a href="http://www.bireme.br/wwwisis.htm">WWWISIS</a></font></td>
+    </tr>
+    </table>
+    </div>
+    <div class="bottom">
+    <div id="footNotes"></div>
+    </div>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    _uacct = "UA-644317-5";
+    </script>
+    </div></center>
+
+    </body>
+    </body>
+</html>
