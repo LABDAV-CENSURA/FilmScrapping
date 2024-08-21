@@ -1,31 +1,42 @@
-from bs4 import NavigableString
 from functions import fetch_html, parse_informations, save_to_csv
 
 def main():
-    url = "https://bases.cinemateca.org.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&base=FILMOGRAFIA&lang=p&nextAction=lnk&exprSearch=ID=039949&format=detailed.pft#1"
+    base_url = "https://bases.cinemateca.org.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&base=FILMOGRAFIA&lang=p&nextAction=lnk&exprSearch=ID={}&format=detailed.pft#1"
     
-    html_content = fetch_html(url)
-    
-    if html_content:
-        data = parse_informations(html_content)
-        if data:
-            title = data.find('b', class_='title')
-            title = title.text.strip() if title else "Não encontrado"
-            print(f"Título: {title}")
+    start_id = 0
+    end_id = 10
 
-            # Find all labels
-            labels = data.find_all('b', class_='label')
-            data = []
+    headers = []
+    all_data = {}
+
+    for film_id in range(start_id, end_id + 1):
+        film_id_str = str(film_id).zfill(6)
+        url = base_url.format(film_id_str)
+        html_content = fetch_html(url)
+        
+        if html_content:
+            soup = parse_informations(html_content)
+
+            title = soup.find('b', class_='title')
+            title = title.text.strip() if title else "Não encontrado"
+
+            headers.append(f"Filme {film_id_str}")
             
+            labels = soup.find_all('b', class_='label')
+            
+            # Adiciona o título à primeira categoria
+            if 'Título' not in all_data:
+                all_data['Título'] = []
+            all_data['Título'].append(title)
+
             for label in labels:
                 label_name = label.text.strip()
                 label_value = ""
-                
-                # Iterate through the siblings until the next label or end of section
+
                 for sibling in label.next_siblings:
                     if sibling.name == 'b' and 'label' in sibling.get('class', []):
-                        break  # Stop at the next label
-                    if isinstance(sibling, NavigableString):
+                        break
+                    if isinstance(sibling, str):
                         label_value += sibling.strip()
                     elif sibling.name == 'br':
                         label_value += '\n'
@@ -35,16 +46,25 @@ def main():
                         label_value += sibling.get_text(strip=True)
 
                 label_value = label_value.strip()
-                print(f"{label_name}: {label_value}")
-                data.append({'Categoria': label_name, 'Informação': label_value})
-            
-            # Optionally, save the data to CSV
-            csv_filename = 'informacoes_filme.csv'
-            save_to_csv(data, csv_filename)
-            print(f"Dados salvos em {csv_filename}")
-    
-    else:
-        print('Não foi possível obter o conteúdo HTML.')
+                
+                if label_name not in all_data:
+                    all_data[label_name] = []
+
+                all_data[label_name].append(label_value)
+
+            print(f"Filme ID {film_id_str} processado com sucesso.")
+        
+        else:
+            print(f"Falha ao processar o ID {film_id_str}")
+
+    max_columns = len(headers)
+    for category in all_data:
+        while len(all_data[category]) < max_columns:
+            all_data[category].append("")
+
+    csv_filename = 'informacoes_filme.csv'
+    save_to_csv(headers, all_data, csv_filename)
+    print(f'Dados salvos em {csv_filename}')
 
 if __name__ == "__main__":
     main()

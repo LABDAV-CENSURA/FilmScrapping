@@ -18,10 +18,9 @@ def parse_informations(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     return soup
 
-
-def save_to_csv(data, filename):
+def save_to_csv(headers, all_data, filename):
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['Categoria', 'Informação'])
-        for item in data:
-            writer.writerow([item['Categoria'], item['Informação']])
+        writer.writerow(['Categoria'] + headers)
+        for category, infos in all_data.items():
+            writer.writerow([category] + infos)
