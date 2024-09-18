@@ -1,15 +1,18 @@
+import random
+import time
 from functions import fetch_html, parse_informations, save_to_csv
 
 def main():
     base_url = "https://bases.cinemateca.org.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&base=FILMOGRAFIA&lang=p&nextAction=lnk&exprSearch=ID={}&format=detailed.pft#1"
     
     start_id = 0
-    end_id = 10
+    end_id = 999999
 
     headers = []
     all_data = {}
 
     for film_id in range(start_id, end_id + 1):
+        time.sleep(random.uniform(5, 10))  # Delay aleatório entre 5 e 10 segundos
         film_id_str = str(film_id).zfill(6)
         url = base_url.format(film_id_str)
         html_content = fetch_html(url)
@@ -62,9 +65,9 @@ def main():
         while len(all_data[category]) < max_columns:
             all_data[category].append("")
 
-    csv_filename = 'informacoes_filme.csv'
+    csv_filename = 'informacoes_filmes.csv'
     save_to_csv(headers, all_data, csv_filename)
     print(f'Dados salvos em {csv_filename}')
-
+ 
 if __name__ == "__main__":
     main()
