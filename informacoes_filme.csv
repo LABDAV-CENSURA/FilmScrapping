@@ -1,7 +1,8 @@
-Categoria,Filme 000000,Filme 000001,Filme 000002,Filme 000003,Filme 000004,Filme 000005,Filme 000006,Filme 000007,Filme 000008,Filme 000009,Filme 000010
-Título,Não encontrado,ALAGOAS JORNAL. N.02,ALMA SERTANEJA,ALVORADA DE GLÓRIA,ANCHIETA (ENTRE A RELIGIÃO E O AMOR),ASAS GLORIOSAS DA ITÁLIA NOVA SOB O CÉU DO BRASIL,ASAS ITALIANAS NO RIO DE JANEIRO,AZAS ITALIANAS SOB OS CÉOS DO BRASIL,ACTUALIDADES GAÚCHAS. N.01,ACTUALIDADES GAÚCHAS. N.02,ACTUALIDADES GAÚCHAS. N.03
-Categorias,Cinejornal / Silencioso / Não ficção,Curta-metragem / Ficção,Curta-metragem / Sonoro / Ficção,Longa-metragem / Ficção,Curta-metragem / Silencioso / Não ficção,Curta-metragem / Silencioso / Não ficção,Curta-metragem / Silencioso / Não ficção,Cinejornal / Silencioso / Não ficção,Cinejornal / Não ficção,Cinejornal / Silencioso / Não ficção,
-Material original,"35mm, BP, 16q","35mm, BP, 16q","35mm, BP, 55min, 1.494m, 24q, Sincronizado com discos","35mm, BP, 16q, Sincronizado com discos","35mm, BP, 16q","35mm, BP, 16q","35mm, BP, 190m","35mm, BP, 16q","35mm, BP, 16q","35mm, BP, 16q",
+Categoria,Filme 000001,Filme 000002,Filme 000003,Filme 000004,Filme 000005
+Título,ALAGOAS JORNAL. N.02,ALMA SERTANEJA,ALVORADA DE GLÓRIA,ANCHIETA (ENTRE A RELIGIÃO E O AMOR),ASAS GLORIOSAS DA ITÁLIA NOVA SOB O CÉU DO BRASIL
+Código do Filme,000001,000002,000003,000004,000005
+Categorias,Cinejornal / Silencioso / Não ficção,Curta-metragem / Ficção,Curta-metragem / Sonoro / Ficção,Longa-metragem / Ficção,Curta-metragem / Silencioso / Não ficção
+Material original,"35mm, BP, 16q","35mm, BP, 16q","35mm, BP, 55min, 1.494m, 24q, Sincronizado com discos","35mm, BP, 16q, Sincronizado com discos","35mm, BP, 16q"
 Data e local de produção,"Ano:1931
 País:BR
 Cidade:Maceió
@@ -14,20 +15,7 @@ Cidade:São Paulo
 Estado:SP","Ano:1931
 País:BR
 Cidade:Rio de Janeiro
-Estado:DF","Ano:1931
-País:BR","Ano:1931
-País:BR
-Cidade:Rio de Janeiro
-Estado:DF","Ano:1932
-País:BR
-Cidade:Porto Alegre
-Estado:RS","Ano:1932
-País:BR
-Cidade:Porto Alegre
-Estado:RS","Ano:1933a
-País:BR
-Cidade:Porto Alegre
-Estado:RS",
+Estado:DF"
 Data e local de lançamento,"Data:1931.02.25
 Local:Maceió
 Sala(s):Capitólio","Data:1931.11.16
@@ -37,36 +25,17 @@ Exibição especial:1931.12.16
 Local exibição especial:São Paulo
 Sala(s):Paramount","Data:1932.03.15
 Local:São Paulo
-Sala(s):Oberdan","Data:1932.05.03
-Local:Porto Alegre
-Sala(s):Central","Data:1932.07.02
-Local:Porto Alegre
-Sala(s):Central","Data:1933.06.10
-Local:Porto Alegre
-Sala(s):Guarany e Central",,,,,
-Circuito exibidor,"Exibido em Maceió a 26.02.1931, no Capitólio.","Exibido em São Paulo a 27.05.1931, no São Paulo e a 05.06.1931, no Avenida.","Exibido em São Paulo de 16 a 22.11.1931, no Paramount; a 06.12.1931, no Olímpia; a 12.12.1931, no São José; a 30.12.1931, no Glória; a 13.01.1932, no São Paulo; de 16 a 17.01.1932, no América; a 27.01.1932, no Fênix; de 25 a 26.02.1932, no Paraíso e a 14.03.1933, no Espéria.Exibido em Porto Alegre, sem especificação de salas ou datas, segundo Cinearte de 25.05.1932.Exibido em Curitiba a 05.05.1932, no Avenida.","Exibido em São Paulo de 15 a 16.03.1932, no Oberdan; a 01.04.1932, no São Paulo e a 04.04.1932, no Central.Exibido no Rio de Janeiro, segundo Cinearte de 22.07.1931, no Parisiense; a mesma revista em 08.06.1932 indica uma exibição em Varginha (MG), e em 01.04.1933 outra exibição em Jequié (BA).","Exibido em São Paulo a 17.01.1931, no São Bento, no Mafalda e no Odeon (Sala Verde).","Exibido em São Paulo a 17.01.1931, no Paratodos.","Exibido em Porto Alegre a 11 e 12.06.1933, no Guarany e Central.",,,,
-Sinopse,"Coleção de reportagens dos acontecimentos desenrolados na capital, destacando-se a chegada do Dr. Fernandes Lima, flagrantes do Carnaval, o encalhe do vapor Pirineus, vistas de Bebedouro, movimento das casas comerciais e exames da Escola Remington.","Na piscina do Clube Paulistano, Lygia diz a Nilo que gostara do disco ""Lua branca"", gravado pelo rapaz. Este se compromete a visitá-la para interpretar a canção pessoalmente. A visita marca o início do romance entre os dois que depois se torna noivado. No entanto, Nilo está envolvido com a sublevação nos quartéis de 1924 e, com a eclosão da revolução, parte para a frente de batalha. A cidade de São Paulo mostra os estragos provocados pelos bombardeios. Os revoltosos, a fim de evitar maiores sacrifícios para a cidade, após dias de luta e de vitória, resolvem abandoná-la. Antes de Nilo partir, Lygia lhe dá uma medalha de Nossa Senhora como recordação e para a sua proteção. Nilo encontra-se no exílio ao lado de Nelson e outros companheiros que aguardam o momento propício para retornar ao Brasil, e para contornar a tristeza o grupo entoa canções. Tempos depois, outra luta tem início e os soldados retornam ao país. Ao tentar desarticular uma metralhadora que castigava sua tropa na mata, Nilo é alvejado. Agonizando, pede a Nelson que devolva a medalha a Lygia e o exorta a continuar a lutar até a vitória. Desfile dos soldados vitoriosos aclamados pelo povo. Nelson procura Lygia e lhe entrega a medalha. Certo dia em sua casa, Lygia se depara com uma fotografia de Nilo, coloca na vitrola o disco gravado pelo rapaz, e, ao emocionar-se com a canção, sem querer, quebra-o. Entretanto a música continua. Lygia se dirige ao jardim onde encontra Nilo cantando. Os dois se beijam. (Resumo a partir de material examinado).","""(...) a catequese dos índios pelos jesuítas. Havia uma índia que se apaixonava pelo padre Anchieta; o padre correspondia ao seu amor, mas não queria cair na tentação da carne. Martirizava-se, então, e para provar o seu amor à Virgem Maria e a sua dedicação à religião, escrevia poemas na areia. Havia também no enredo uma guerra entre guaranis e tamoios; filmaram combates violentíssimos em terra e mar. Depois a tribo vencedora ia para a taba festejar a vitória; havia uma cena de danças indígenas, e o filme acabava assim."" (Depoimento de Nicola Tartaglione, in MRG/CCP)","""Italianos e Brasileiros! Vinde assistir à recepção feita pela população do Rio de Janeiro aos gloriosos aviadores da esquadrilha do General Balbo que, de Orbello à Guanabara, uniram num complexo fraternal dois grandes povos! A amaragem do Pavilhão de Regatas - A recepção oficial feita pelas autoridades do Governo Provisório - A chegada dos convidados - As manifestações de entusiasmo da população carioca - Aspectos exclusivos da viagem da Caravana Fiat que foi ao Rio de Janeiro aguardar a chegada dos gloriosos aviadores.""","Em expedição pela América Latina, o gal. italiano Italo Balbo realiza a travessia atlântica com sua esquadrilha de hidroaviões, que partindo de Boloma, adentrou o território brasileiro por Natal e agora finaliza o trajeto na capital Rio de Janeiro. Chegada da esquadrilha fascista na Enseada de Botafogo. Populares, muitos em embarcações, aplaudem a descida dos hidroaviões. Um grupo de oficiais passa em revista os soldados perfilados. O gal. Italo Balbo, o embaixador Vittorio Cerrutti e o real cônsul Onorevole Mammalella assistem ao desfile das tropas. Grupo de oficiais com o cel. Magdalena, ""o intrépido herói de várias façanhas aéreas"". No Palácio do Catete, Balbo e Cerrutti são recebidos pelo presidente do Governo Provisório, Getúlio Vargas, e seus ministros. A comitiva italiana deixa o Palácio do Catete.","""...As últimas novidades porto-alegrenses, inclusive a última corrida de touros realizada domingo passado"". (AJP/FCG)""...Os últimos acontecimentos políticos e desportivos, a chegada do dr. Osvaldo Aranha a esta capital, touradas, Feira de Amostras etc"". (GNP/PCG)","""(...) a inauguração do ring de patinação no Campo da Redenção; as festas de comemoração do cinqüentenário da morte de Garibaldi. Festa da Sociedade Hípica Rio-Grandense; raid em volta da América, por dois sócios do Grêmio Náutico Gaúcho; partida de futebol entre o Americano e o Internacional, no Estádio dos Eucaliptos; a recente conferência política efetuada em Cachoeira, onde aparecem o Dr. Borges de Medeiros, General Flores da Cunha e os diversos líderes da frente única."" (AJP/FCG)","""(...) reportagem completa de todas as touradas realizadas em Porto Alegre desde a construção da Praça de Touros."" (AJP/FCG)",,,
-Termos descritores,Carnaval; Embarcação; Acidente; Comércio; Ensino,Revolução de 24; Revolução de 30; Música popular brasileira,"História; Índio; Igreja Católica; Anchieta, José de",Aviação; Visita estrangeira - IT,Aviação; Visita estrangeira - IT; Governo Federal; Diplomacia,Aviação; Visita estrangeira - IT; Diplomacia - IT; Governo Federal; Embarcação; Marinha; Exército; Desfile; Fascismo,Espetáculo; Exposiçao,Patinação; Efeméride; Automobilismo; Futebol; Conferência; Política,Espetáculo,,
-Descritores secundários,Vapor Pirineus; Escola Remington; Bebedouro - AL,Clube Paulistano,Guaranis; Tamoios,"Pavilhão de Regatas, Rio de Janeiro - DF; Caravana Fiat; Balbo, Italo","Palácio do Catete, Rio de Janeiro - DF; Enseada de Botafogo, Rio de Janeiro-DF; Morro do Pão de Açúcar, Rio de Janeiro-DF; Ilha Fiscal; Magdalena - coronel",Corrida de touros; Feira de Amostras,"Campo da Redenção, Porto Alegre - RS; Garibaldi, Giuseppe; Sociedade Hípica Rio-Grandense, Porto Alegre - RS; Grêmio Náutico Gaúcho, Porto Alegre - RS; Americano FC; Internacional FC; Estádio dos Eucaliptos, Porto Alegre - RS","Tourada; Praça de Touros, Porto Alegre - RS",,,
-Termos geográficos,Maceió - AL,São Paulo - SP,Rio de Janeiro - DF,Rio de Janeiro - DF,Rio de Janeiro - DF,Porto Alegre - RS,Porto Alegre - RS; Cachoeira - RS,Porto Alegre - RS,,,
+Sala(s):Oberdan",,
+Circuito exibidor,"Exibido em Maceió a 26.02.1931, no Capitólio.","Exibido em São Paulo a 27.05.1931, no São Paulo e a 05.06.1931, no Avenida.","Exibido em São Paulo de 16 a 22.11.1931, no Paramount; a 06.12.1931, no Olímpia; a 12.12.1931, no São José; a 30.12.1931, no Glória; a 13.01.1932, no São Paulo; de 16 a 17.01.1932, no América; a 27.01.1932, no Fênix; de 25 a 26.02.1932, no Paraíso e a 14.03.1933, no Espéria.Exibido em Porto Alegre, sem especificação de salas ou datas, segundo Cinearte de 25.05.1932.Exibido em Curitiba a 05.05.1932, no Avenida.","Exibido em São Paulo de 15 a 16.03.1932, no Oberdan; a 01.04.1932, no São Paulo e a 04.04.1932, no Central.Exibido no Rio de Janeiro, segundo Cinearte de 22.07.1931, no Parisiense; a mesma revista em 08.06.1932 indica uma exibição em Varginha (MG), e em 01.04.1933 outra exibição em Jequié (BA).","Exibido em São Paulo a 17.01.1931, no São Bento, no Mafalda e no Odeon (Sala Verde)."
+Sinopse,"Coleção de reportagens dos acontecimentos desenrolados na capital, destacando-se a chegada do Dr. Fernandes Lima, flagrantes do Carnaval, o encalhe do vapor Pirineus, vistas de Bebedouro, movimento das casas comerciais e exames da Escola Remington.","Na piscina do Clube Paulistano, Lygia diz a Nilo que gostara do disco ""Lua branca"", gravado pelo rapaz. Este se compromete a visitá-la para interpretar a canção pessoalmente. A visita marca o início do romance entre os dois que depois se torna noivado. No entanto, Nilo está envolvido com a sublevação nos quartéis de 1924 e, com a eclosão da revolução, parte para a frente de batalha. A cidade de São Paulo mostra os estragos provocados pelos bombardeios. Os revoltosos, a fim de evitar maiores sacrifícios para a cidade, após dias de luta e de vitória, resolvem abandoná-la. Antes de Nilo partir, Lygia lhe dá uma medalha de Nossa Senhora como recordação e para a sua proteção. Nilo encontra-se no exílio ao lado de Nelson e outros companheiros que aguardam o momento propício para retornar ao Brasil, e para contornar a tristeza o grupo entoa canções. Tempos depois, outra luta tem início e os soldados retornam ao país. Ao tentar desarticular uma metralhadora que castigava sua tropa na mata, Nilo é alvejado. Agonizando, pede a Nelson que devolva a medalha a Lygia e o exorta a continuar a lutar até a vitória. Desfile dos soldados vitoriosos aclamados pelo povo. Nelson procura Lygia e lhe entrega a medalha. Certo dia em sua casa, Lygia se depara com uma fotografia de Nilo, coloca na vitrola o disco gravado pelo rapaz, e, ao emocionar-se com a canção, sem querer, quebra-o. Entretanto a música continua. Lygia se dirige ao jardim onde encontra Nilo cantando. Os dois se beijam. (Resumo a partir de material examinado).","""(...) a catequese dos índios pelos jesuítas. Havia uma índia que se apaixonava pelo padre Anchieta; o padre correspondia ao seu amor, mas não queria cair na tentação da carne. Martirizava-se, então, e para provar o seu amor à Virgem Maria e a sua dedicação à religião, escrevia poemas na areia. Havia também no enredo uma guerra entre guaranis e tamoios; filmaram combates violentíssimos em terra e mar. Depois a tribo vencedora ia para a taba festejar a vitória; havia uma cena de danças indígenas, e o filme acabava assim."" (Depoimento de Nicola Tartaglione, in MRG/CCP)",,
+Termos descritores,Carnaval; Embarcação; Acidente; Comércio; Ensino,Revolução de 24; Revolução de 30; Música popular brasileira,"História; Índio; Igreja Católica; Anchieta, José de",Aviação; Visita estrangeira - IT,
+Descritores secundários,Vapor Pirineus; Escola Remington; Bebedouro - AL,Clube Paulistano,Guaranis; Tamoios,,
+Termos geográficos,Maceió - AL,São Paulo - SP,Rio de Janeiro - DF,,
 Produção,Companhia(s) produtora(s):Alagoas Filme,"Companhia(s) produtora(s):Victor Filme
 Produção:Picchia, Victor del
 Direção de produção:Picchia, Menotti del","Companhia(s) produtora(s):Luz-Arte Filme
-Produção:Vidal, Alberto","Produção:Pietras, Ottorino","Companhia(s) produtora(s):Leopoldis Filme
-Produção:Majeroni, Italo","Companhia(s) produtora(s):Leopoldis Filme
-Produção:Majeroni, Italo","Companhia(s) produtora(s):Leopoldis Filme
-Produção:Majeroni, Italo
-
-Conteúdo examinado:N
-Fontes utilizadas:
-AJP/FCG
-Cinearte, 01.07.1933
-GNP/PCG
-Observações:
-Segundo AJP/FCG este cinejornal foi exibido em Porto Alegre em julho de 1931 no <Guarani> e <Central>.
-Segundo GNP/PCG este número do cinejornal estava em produçao em outubro de 1932.
-Cinearte também indica exibiçao no Guarani e Central de Porto Alegre, sem informar as datas.",,,,
-Direção,"Direção:Chagas, Edison","Direção:Picchia, Victor del; Barros, Luiz de","Direção:Carrari, Arturo",,,,,,,,
+Produção:Vidal, Alberto",,
+Direção,"Direção:Chagas, Edison","Direção:Picchia, Victor del; Barros, Luiz de","Direção:Carrari, Arturo",,
 Identidades/elenco:,"Lima, Fernandes
 
 Conteúdo examinado:N
@@ -123,35 +92,7 @@ Fotografia: Cinearte, 22 e 29.04; 06.05; 10.06; 24.06 e 22.07.1931.
 ACPJ/CB: 1906-1968 e ACPJ/75 indicam <Carrari, Rodolfo> como diretor.
 ACPJ/I afirma que a fita é de 1933; na ficha técnica inclui argumento de <Carrari, Hélio> e no elenco <Rolando, Antônio> e <Grey, Dino>.
 CS/FCB indica que <Rudner, Irene> fazia o papel da índia, <Grey, Dino> o de Anchieta e acrescenta ao elenco <Rey, Calvus> e <Rudner, A.> como índios e <Dalvi, A.> como fidalgo.
-Cinearte de 11.03.1931 informa que a produção inicial estaria a cargo de <Carrari, José>.","Balbo, Italo
-Cerrutti, Vittorio
-Mammalella, Onorevole
-Vargas, Getúlio
-
-Conteúdo examinado:S
-Fontes utilizadas:
-CB/Transcrição de letreiros-Doc
-CB/Ficha filmográfica
-O Jornal (RJ), 27.12.1930, p.1, disponível em: http://memoria.bn.br/DocReader/110523_03/5750, acesso em: 31.11.2023.
-Observações:
-Realizados no mesmo ano, em ocasião da visita dos aviadores italianos, os filmes: <ASAS GLORIOSAS DA ITÁLIA NOVA SOB O CÉU DO BRASIL>; <ASAS ITALIANAS NO RIO DE JANEIRO>; <CHEGADA DA ESQUADRILHA ITALIANA À GUANABARA>; <CHEGADA DOS AVIADORES ITALIANOS AO RIO>.
-Restaurado pela Cinemateca Brasileira no projeto <Resgate do Cinema Silencioso Brasileiro> / <CEF> - <Caixa Econômica Federal>, 2007-2008.
-Esta obra foi processada no âmbito do Projeto <Nitratos da Cinemateca Brasileira - Preservação e Acesso> - <Pronac 212939>, 2021, patrocinado pelo <Instituto Cultural Vale> e <Shell do Brasil>.","Aranha, Osvaldo
-
-Conteúdo examinado:N
-Fontes utilizadas:
-AJP/FCG
-GNP/PCG, citando Diário de Notícias, Porto Alegre, 04.05.1932.
-Observações:
-AJP/FCG data o filme em 1931.","Medeiros, Borges de
-Cunha, Flores da
-
-Conteúdo examinado:N
-Fontes utilizadas:
-AJP/FCG
-GNP/PCG
-Observações:
-AJP/FCG data o filme em 1931.",,,,,
+Cinearte de 11.03.1931 informa que a produção inicial estaria a cargo de <Carrari, José>.",,
 Gênero,"Musical
 Conteúdo examinado:N
 Fontes utilizadas:
@@ -159,24 +100,17 @@ JCB/OESP
 Observações:
 ""1 parte""
 JCB/OESP não indica a nacionalidade da fita.
-A fonte indica que se trata de um ""Short cantado"".",Drama romântico,Drama,Documentário,Documentário,Documentário,,,,,
+A fonte indica que se trata de um ""Short cantado"".",Drama romântico,Drama,Documentário,
 Distribuição,Companhia(s) distribuidora(s):Paramount Filmes,Companhia(s) distribuidora(s):Agência Matarazzo,"Companhia(s) distribuidora(s):Programa Serrador
 
 Conteúdo examinado:S
 Fontes utilizadas:
 JCB/OESP
-Material examinado","Companhia(s) distribuidora(s):Programa Alfa
-
-Conteúdo examinado:N
-Fontes utilizadas:
-CB/Ficha Filmográfica
-JCB/OESP
-Observações:
-Realizados no mesmo ano, em ocasião da visita dos aviadores italianos, os filmes: <ASAS GLORIOSAS DA ITÁLIA NOVA SOB O CÉU DO BRASIL>; <AZAS ITALIANAS SOB OS CÉOS DO BRASIL>; <CHEGADA DA ESQUADRILHA ITALIANA À GUANABARA>; <CHEGADA DOS AVIADORES ITALIANOS AO RIO>.",,,,,,,
+Material examinado",,
 Argumento/roteiro,"Argumento:Picchia, Menotti del
-Roteiro:Barros, Luiz de",,,,,,,,,,
-Fotografia,"Operador:Barros, Luiz de; Picchia, Victor del","Operador:Carrari, Hélio; Carrari, José",,,,,,,,,
-Montagem,"Montagem:Barros, Luiz de",,,,,,,,,,
-Direção de arte,"Cenografia:Barros, Luiz de",,,,,,,,,,
-Canção,Título:Lua branca,,,,,,,,,,
-Locação:,"Prainha, Santos - SP",,,,,,,,,,
+Roteiro:Barros, Luiz de",,,,
+Fotografia,"Operador:Barros, Luiz de; Picchia, Victor del","Operador:Carrari, Hélio; Carrari, José",,,
+Montagem,"Montagem:Barros, Luiz de",,,,
+Direção de arte,"Cenografia:Barros, Luiz de",,,,
+Canção,Título:Lua branca,,,,
+Locação:,"Prainha, Santos - SP",,,,

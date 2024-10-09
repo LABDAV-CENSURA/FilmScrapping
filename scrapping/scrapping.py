@@ -1,22 +1,23 @@
 from flask import Flask, request, jsonify
 import random
 import time
-from functions import fetch_html, parse_informations, save_to_csv
+from functions import fetch_html, parse_informations
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Habilita CORS se necessário
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
     # Parâmetros opcionais passados na requisição
     start_id = request.json.get('start_id', 0)
-    end_id = request.json.get('end_id', 999999)
+    end_id = request.json.get('end_id', 5)
     year_start = request.json.get('year_start', 1931)
     year_end = request.json.get('year_end', year_start)
 
     base_url = "https://bases.cinemateca.org.br/cgi-bin/wxis.exe/iah/?IsisScript=iah/iah.xis&base=FILMOGRAFIA&lang=p&nextAction=lnk&exprSearch=ID={}&format=detailed.pft#1"
 
-    headers = []
-    all_data = {}
+    all_data = []
 
     for film_id in range(start_id, end_id + 1):
         time.sleep(random.uniform(5, 10))  # Delay aleatório entre 5 e 10 segundos
@@ -27,6 +28,7 @@ def scrape():
         if html_content:
             soup = parse_informations(html_content)
 
+            # Título do filme
             title = soup.find('b', class_='title')
             title = title.text.strip() if title else "Não encontrado"
 
@@ -38,14 +40,14 @@ def scrape():
 
             # Verificar se o ano está dentro da faixa desejada
             if year and year.isdigit() and year_start <= int(year) <= year_end:
-                headers.append(f"Filme {film_id_str}")
+                film_data = {
+                    "ID": film_id_str,
+                    "Título": title,
+                    "Ano": year,
+                    "Informações": {}
+                }
 
                 labels = soup.find_all('b', class_='label')
-                
-                # Adiciona o título à primeira categoria
-                if 'Título' not in all_data:
-                    all_data['Título'] = []
-                all_data['Título'].append(title)
 
                 for label in labels:
                     label_name = label.text.strip()
@@ -64,11 +66,12 @@ def scrape():
                             label_value += sibling.get_text(strip=True)
 
                     label_value = label_value.strip()
-                    
-                    if label_name not in all_data:
-                        all_data[label_name] = []
 
-                    all_data[label_name].append(label_value)
+                    # Adiciona a informação ao dicionário de informações
+                    film_data["Informações"][label_name] = label_value
+
+                # Adiciona o filme ao dicionário de todos os filmes
+                all_data.append(film_data)
 
                 print(f"Filme ID {film_id_str} processado com sucesso. Ano: {year}")
             else:
@@ -77,18 +80,8 @@ def scrape():
         else:
             print(f"Falha ao processar o ID {film_id_str}")
 
-    # Garantir que todas as colunas tenham o mesmo tamanho
-    max_columns = len(headers)
-    for category in all_data:
-        while len(all_data[category]) < max_columns:
-            all_data[category].append("")
-
-    # Salvar os dados em CSV
-    csv_filename = 'informacoes_filme.csv'
-    save_to_csv(headers, all_data, csv_filename)
-    print(f'Dados salvos em {csv_filename}')
-
-    return jsonify({"status": "success", "file": csv_filename})
+    # Retorna os dados em formato JSON
+    return jsonify(all_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
