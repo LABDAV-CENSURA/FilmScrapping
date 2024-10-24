@@ -10,7 +10,7 @@ CORS(app)
 @app.route('/scrape', methods=['POST'])
 def scrape():
     start_id = request.json.get('start_id', 1)
-    end_id = request.json.get('end_id', 1)
+    end_id = request.json.get('end_id', 10)
     year_start = request.json.get('year_start', 1931)
     year_end = request.json.get('year_end', year_start)
 
@@ -39,17 +39,22 @@ def scrape():
 
             # Verificar se o ano está dentro da faixa desejada
             if year and year.isdigit() and year_start <= int(year) <= year_end:
+                # Inicializa o dicionário com ID, Título e Ano
                 film_data = {
                     "ID": film_id_str,
                     "Título": title,
                     "Ano": year,
-                    "Informações": {}
                 }
 
+                # Extraindo as informações adicionais, ignorando Título, ID, e Ano
                 labels = soup.find_all('b', class_='label')
 
                 for label in labels:
                     label_name = label.text.strip()
+                    # Ignorar os campos já extraídos
+                    if label_name.lower() in ['título', 'id', 'ano']:
+                        continue
+
                     label_value = ""
 
                     for sibling in label.next_siblings:
@@ -66,8 +71,8 @@ def scrape():
 
                     label_value = label_value.strip()
 
-                    # Adiciona a informação ao dicionário de informações
-                    film_data["Informações"][label_name] = label_value
+                    # Adiciona diretamente a informação no dicionário do filme
+                    film_data[label_name] = label_value
 
                 # Adiciona o filme ao dicionário de todos os filmes
                 all_data.append(film_data)
