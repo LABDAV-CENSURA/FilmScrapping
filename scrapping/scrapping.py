@@ -5,13 +5,12 @@ from functions import fetch_html, parse_informations
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Habilita CORS se necessário
+CORS(app)
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
-    # Parâmetros opcionais passados na requisição
-    start_id = request.json.get('start_id', 0)
-    end_id = request.json.get('end_id', 5)
+    start_id = request.json.get('start_id', 1)
+    end_id = request.json.get('end_id', 1)
     year_start = request.json.get('year_start', 1931)
     year_end = request.json.get('year_end', year_start)
 
@@ -20,7 +19,7 @@ def scrape():
     all_data = []
 
     for film_id in range(start_id, end_id + 1):
-        time.sleep(random.uniform(5, 10))  # Delay aleatório entre 5 e 10 segundos
+        time.sleep(random.uniform(0.05, 0.03))  
         film_id_str = str(film_id).zfill(6)
         url = base_url.format(film_id_str)
         html_content = fetch_html(url)

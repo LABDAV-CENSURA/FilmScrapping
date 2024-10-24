@@ -20,7 +20,7 @@ def fetch_html(url):
 
     try:
         driver.get(url)
-        time.sleep(5)  # Esperar para carregar a página (pode ser ajustado)
+        time.sleep(0.1)  # Esperar para carregar a página (pode ser ajustado)
         
         html_content = driver.page_source
         return html_content
