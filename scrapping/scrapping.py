@@ -10,7 +10,7 @@ CORS(app)
 @app.route('/scrape', methods=['POST'])
 def scrape():
     start_id = request.json.get('start_id', 1)
-    end_id = request.json.get('end_id', 10)
+    end_id = request.json.get('end_id', 5)
     year_start = request.json.get('year_start', 1931)
     year_end = request.json.get('year_end', year_start)
 

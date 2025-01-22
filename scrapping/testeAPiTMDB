@@ -1,0 +1,123 @@
+import requests
+import csv
+from flask import Flask, jsonify
+from flask_cors import CORS
+import time
+
+# Configurações da API do TMDB
+TMDB_API_KEY = "9ab92ded7e248a4fb6756f3db1b73b1d"
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+
+# Configuração do Flask
+app = Flask(__name__)
+CORS(app)
+
+def fetch_all_movies_from_tmdb(start_year, end_year):
+    """
+    Busca todos os filmes brasileiros do TMDB no intervalo de anos especificado.
+    """
+    print("Iniciando a busca de filmes brasileiros...")
+    url = f"{TMDB_BASE_URL}/discover/movie"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "sort_by": "release_date.asc",
+        "primary_release_date.gte": f"{start_year}-01-01",
+        "primary_release_date.lte": f"{end_year}-12-31",
+        "page": 1,
+        "with_origin_country": "BR",  # Filtra apenas filmes de produção brasileira
+    }
+
+    all_movies = []
+    total_movies = 0
+
+    while True:
+        print(f"Buscando filmes na página {params['page']}...")
+        response = requests.get(url, params=params)
+        if response.status_code != 200:
+            print(f"Erro na requisição para TMDB: {response.status_code}")
+            break
+
+        data = response.json()
+
+        # Total de filmes apenas na primeira página
+        if total_movies == 0:
+            total_movies = data["total_results"]
+            print(f"Total de filmes encontrados: {total_movies}")
+
+        # Adiciona os filmes encontrados à lista
+        all_movies.extend(data.get("results", []))
+
+        # Verifica se há mais páginas para buscar
+        if data["page"] >= data["total_pages"]:
+            print("Não há mais páginas para buscar.")
+            break
+
+        # Incrementa o número da página para a próxima requisição
+        params["page"] += 1
+        time.sleep(0.2)  # Aguarda para evitar sobrecarregar o servidor da API
+
+        # Mostra o progresso
+        print(f"Página {data['page']} adquirida. Filmes restantes: {total_movies - len(all_movies)}")
+
+    print(f"Busca concluída. {len(all_movies)} filmes encontrados.")
+    return all_movies
+
+def fetch_cast_and_crew_from_tmdb(movie_id):
+    """
+    Busca o elenco e a equipe técnica de um filme pelo seu ID no TMDB.
+    """
+    print(f"Buscando elenco e equipe técnica para o filme ID: {movie_id}...")
+    url = f"{TMDB_BASE_URL}/movie/{movie_id}/credits"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "language": "pt-BR",
+    }
+
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        print(f"Dados de elenco e equipe técnica encontrados para o filme {movie_id}.")
+        return response.json()
+    else:
+        print(f"Erro ao buscar elenco e equipe do filme {movie_id}: {response.status_code}")
+        return None
+
+def scrap():
+    print("Iniciando o processo de coleta de filmes e dados de pessoas...")
+    filmes = fetch_all_movies_from_tmdb(2024, 2024)
+    people_worked = []
+
+    for filme in filmes:
+        movie_id = filme["id"]
+        credits = fetch_cast_and_crew_from_tmdb(movie_id)
+
+        if credits:
+            print(f"Processando pessoas que trabalharam no filme '{filme['title']}'...")
+            # Processa o elenco
+            for person in credits.get("cast", []):
+                people_worked.append({
+                    "Nome": person["name"],
+                    "Filme": filme["title"],
+                    "Tipo": "Elenco"
+                })
+
+            # Processa a equipe técnica (diretores, roteiristas, etc.)
+            for person in credits.get("crew", []):
+                if person["job"] in ["Director", "Writer", "Producer"]:  # Filtrando jobs de interesse
+                    people_worked.append({
+                        "Nome": person["name"],
+                        "Filme": filme["title"],
+                        "Tipo": person["job"]
+                    })
+
+    # Cria o arquivo CSV
+    print("Gerando o arquivo CSV com os dados de pessoas...")
+    with open('people_worked.csv', mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=["Nome", "Filme", "Tipo"])
+        writer.writeheader()
+        writer.writerows(people_worked)
+    
+    print(f"Arquivo CSV gerado com {len(people_worked)} registros.")
+    print("Processo concluído.")
+
+if __name__ == "__main__":
+    scrap()
