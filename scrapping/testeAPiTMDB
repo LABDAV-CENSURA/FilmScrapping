@@ -1,6 +1,6 @@
 import requests
 import csv
-from flask import Flask, jsonify
+from flask import Flask
 from flask_cors import CORS
 import time
 
@@ -16,13 +16,13 @@ def fetch_all_movies_from_tmdb(start_year, end_year):
     """
     Busca todos os filmes brasileiros do TMDB no intervalo de anos especificado.
     """
-    print("Iniciando a busca de filmes brasileiros...")
+    print(f"Iniciando a busca de filmes brasileiros de {start_year} a {end_year}...")
     url = f"{TMDB_BASE_URL}/discover/movie"
     params = {
         "api_key": TMDB_API_KEY,
         "sort_by": "release_date.asc",
         "primary_release_date.gte": f"{start_year}-01-01",
-        "primary_release_date.lte": f"{end_year}-12-31",
+        "primary_release_date.lte": f"{end_year}-01-31",
         "page": 1,
         "with_origin_country": "BR",  # Filtra apenas filmes de produção brasileira
     }
@@ -31,7 +31,7 @@ def fetch_all_movies_from_tmdb(start_year, end_year):
     total_movies = 0
 
     while True:
-        print(f"Buscando filmes na página {params['page']}...")
+        print(f"Buscando página {params['page']} de filmes...")
         response = requests.get(url, params=params)
         if response.status_code != 200:
             print(f"Erro na requisição para TMDB: {response.status_code}")
@@ -49,7 +49,6 @@ def fetch_all_movies_from_tmdb(start_year, end_year):
 
         # Verifica se há mais páginas para buscar
         if data["page"] >= data["total_pages"]:
-            print("Não há mais páginas para buscar.")
             break
 
         # Incrementa o número da página para a próxima requisição
@@ -59,14 +58,14 @@ def fetch_all_movies_from_tmdb(start_year, end_year):
         # Mostra o progresso
         print(f"Página {data['page']} adquirida. Filmes restantes: {total_movies - len(all_movies)}")
 
-    print(f"Busca concluída. {len(all_movies)} filmes encontrados.")
+    print(f"Total de filmes adquiridos: {len(all_movies)}.")
     return all_movies
 
 def fetch_cast_and_crew_from_tmdb(movie_id):
     """
     Busca o elenco e a equipe técnica de um filme pelo seu ID no TMDB.
     """
-    print(f"Buscando elenco e equipe técnica para o filme ID: {movie_id}...")
+    print(f"Buscando elenco e equipe técnica do filme {movie_id}...")
     url = f"{TMDB_BASE_URL}/movie/{movie_id}/credits"
     params = {
         "api_key": TMDB_API_KEY,
@@ -75,49 +74,138 @@ def fetch_cast_and_crew_from_tmdb(movie_id):
 
     response = requests.get(url, params=params)
     if response.status_code == 200:
-        print(f"Dados de elenco e equipe técnica encontrados para o filme {movie_id}.")
         return response.json()
     else:
         print(f"Erro ao buscar elenco e equipe do filme {movie_id}: {response.status_code}")
         return None
 
+def search_person_by_name(name):
+    """
+    Pesquisa uma pessoa (ator/atriz) pelo nome e retorna seu ID no TMDB.
+    """
+    print(f"Buscando ID para o ator/atriz: {name}...")
+    url = f"{TMDB_BASE_URL}/search/person"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "query": name,
+        "language": "pt-BR",
+    }
+
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+
+        # Verifica se encontrou algum resultado
+        if data["results"]:
+            # Retorna o ID da primeira pessoa encontrada
+            person_id = data["results"][0]["id"]
+            return person_id
+        else:
+            print(f"Pessoa {name} não encontrada no TMDB.")
+            return None
+    else:
+        print(f"Erro ao buscar pessoa: {response.status_code}")
+        return None
+
 def scrap():
-    print("Iniciando o processo de coleta de filmes e dados de pessoas...")
+    print("Iniciando o processo de scraping...")
     filmes = fetch_all_movies_from_tmdb(2024, 2024)
     people_worked = []
+    people_seen = {}  # Para evitar duplicatas usando IDs de pessoas
 
+    print(f"Iniciando o processamento de {len(filmes)} filmes encontrados...")
+    
     for filme in filmes:
         movie_id = filme["id"]
         credits = fetch_cast_and_crew_from_tmdb(movie_id)
 
         if credits:
-            print(f"Processando pessoas que trabalharam no filme '{filme['title']}'...")
+            elenco_total = len(credits.get("cast", []))
+            equipe_total = len(credits.get("crew", []))
+            total_pessoas = elenco_total + equipe_total
+            pessoas_processadas = 0
+            
+            print(f"Processando elenco e equipe técnica de '{filme['title']}' ({total_pessoas} pessoas no total)...")
+            
             # Processa o elenco
             for person in credits.get("cast", []):
-                people_worked.append({
-                    "Nome": person["name"],
-                    "Filme": filme["title"],
-                    "Tipo": "Elenco"
-                })
+                person_id = search_person_by_name(person["name"])
+                pessoas_processadas += 1
+                faltam = total_pessoas - pessoas_processadas
+                print(f"ID buscado para {person['name']} ({faltam} IDs restantes)...")
 
-            # Processa a equipe técnica (diretores, roteiristas, etc.)
-            for person in credits.get("crew", []):
-                if person["job"] in ["Director", "Writer", "Producer"]:  # Filtrando jobs de interesse
+                if person_id and person_id not in people_seen:  # Verifica duplicatas por ID
+                    people_seen[person_id] = person["name"]  # Adiciona ID ao controle
                     people_worked.append({
                         "Nome": person["name"],
                         "Filme": filme["title"],
-                        "Tipo": person["job"]
+                        "Tipo": "Elenco"
                     })
 
+            # Processa a equipe técnica
+            for person in credits.get("crew", []):
+                if person["job"]:  # Apenas se tiver um cargo específico
+                    person_id = search_person_by_name(person["name"])
+                    pessoas_processadas += 1
+                    faltam = total_pessoas - pessoas_processadas
+                    print(f"ID buscado para {person['name']} ({faltam} IDs restantes)...")
+
+                    if person_id and person_id not in people_seen:  # Verifica duplicatas por ID
+                        people_seen[person_id] = person["name"]  # Adiciona ID ao controle
+                        people_worked.append({
+                            "Nome": person["name"],
+                            "Filme": filme["title"],
+                            "Tipo": person["job"]
+                        })
+
     # Cria o arquivo CSV
-    print("Gerando o arquivo CSV com os dados de pessoas...")
+    print(f"Gerando arquivo CSV com {len(people_worked)} registros...")
     with open('people_worked.csv', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=["Nome", "Filme", "Tipo"])
         writer.writeheader()
         writer.writerows(people_worked)
     
-    print(f"Arquivo CSV gerado com {len(people_worked)} registros.")
-    print("Processo concluído.")
+    print(f"Arquivo CSV gerado com sucesso!")
+    transform_csv_for_gephi('people_worked.csv')
+
+import csv
+
+def transform_csv_for_gephi(input_file):
+    nodes = set()
+    edges = []
+
+    with open(input_file, mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            nome = row["Nome"]
+            filme = row["Filme"]
+            
+            # Adiciona os nodes (nós)
+            nodes.add(nome)
+            nodes.add(filme)
+            
+            # Adiciona as edges (arestas)
+            edges.append({
+                "Source": nome,
+                "Target": filme,
+                "Type": "Directed",
+                "Weight": 1
+            })
+
+    # Cria o arquivo nodes.csv
+    with open('nodes.csv', mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=["Id", "Label"])
+        writer.writeheader()
+        for node in nodes:
+            writer.writerow({"Id": node, "Label": node})
+
+    # Cria o arquivo edges.csv
+    with open('edges.csv', mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=["Source", "Target", "Type", "Weight"])
+        writer.writeheader()
+        writer.writerows(edges)
+
+    print("Arquivos nodes.csv e edges.csv gerados com sucesso!")
 
 if __name__ == "__main__":
     scrap()
